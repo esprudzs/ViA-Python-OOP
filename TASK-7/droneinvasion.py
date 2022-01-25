@@ -98,9 +98,9 @@ class Drone(BoundedTurtle):
         super().__init__(speed, xMin, xMax, yMin, yMax)
         self.getscreen().tracer(0)
         self.up()
-        if 'Drone.gif' not in self.getscreen().getshapes():
-            self.getscreen().addshape('Drone.gif')
-        self.shape('Drone.gif')
+        if 'TASK-7\Drone.gif' not in self.getscreen().getshapes():
+            self.getscreen().addshape('TASK-7\Drone.gif')
+        self.shape('TASK-7\Drone.gif')
         self.goto(random.randint(xMin - 1, xMax - 1), yMax - 20)
         self.setheading(random.randint(250, 290))
         self.getscreen().tracer(1)
