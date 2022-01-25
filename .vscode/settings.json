@@ -1,0 +1,7 @@
+{
+    "cSpell.words": [
+        "penup"
+    ],
+    "python.formatting.provider": "autopep8",
+    "python.linting.enabled": true
+}

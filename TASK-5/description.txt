@@ -1,0 +1,33 @@
+""" 
+5.2 
+a) 
+Two separate lists are created to store bear and fish count at each time step. They are named accordingly
+fishCount and bearCount. These lists are assigned first value at their definition and the value is the same as
+numberOfFish and numberOfBears as this is the count of each species at the begingin of simulation. 
+
+to incorporate thing counting in the world we need access to the list that stores all things in the world. 
+thats why getter is created for the class __thingList. 
+
+during each life-cycle of the simulation map function: 
+    resultList = list(map(lambda obj: isinstance(obj, Fish), myWorld.thingList()))
+is executed to generate mapResult object that contains true element for each fish in the World and false for bears. 
+Function in the way that map iterate trough all things in the world and each time perform lambda function. 
+This function returns true if object instance in the myWorld things list is a Fish class instance. 
+Using list class we create list from map result object and utilize count() method of the list to count true and false elements
+and saving true element count as fish count and false as bear count.
+
+To save data to the file csv (comma seperated values) module is used. 
+To ensure that each time new log file is created we use time module and its function strftime to generate unique time string that is used as csv file name.
+using csv module open function file is generated with write perimission. Then file writer is created for this file and first row (header of the file) is written. 
+
+during each life cycle current fish and bear count is calculated as previously described and new row is written to the file using writerow function. 
+
+b)
+new private variable __energy is created for the Bear class. this variable is assigned during object initialization and is passed as parameter to constructor. 
+To make simulation more random each bear object is created with random energy amount between 10 and 20 using random module. 
+
+Based on the task description __energy variable is decreased during breeding and moving and increased if bear just ate. Simple lines: 
+self.__energy -= 1  and  self.__energy += 1 are added to existing methods to manage __energy state of the bear.
+during the last steps of bear method liveALittle() energy check is done and is energy is less than 0 bear is removed from the World thing list. 
+
+"""
